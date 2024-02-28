@@ -1,0 +1,31 @@
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "fonts";
+
+// $vp: 1440px; 
+// $vph: 850px; 
+
+html {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.container {
+	// max-width: ; 
+	// padding: 0 15px;
+
+	//% для сайтов без полей по краям 
+	max-width: max(1440px, calc(1440px/$vp*100vw));
+	padding: 0 max(20px, calc(20px/$vp*100vw));
+
+
+	margin: 0 auto;
+	height: 100%;
+
+}
