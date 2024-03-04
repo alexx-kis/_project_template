@@ -1,10 +1,8 @@
-@import "reset";
-@import "vars";
-@import "mixins";
-@import "fonts";
+/*@// @======================== GENERAL ========================@ //@*/
+/*@// @======================== GENERAL ========================@ //@*/
 
-// $vp: 1440px; 
-// $vph: 850px; 
+$vp: 1440px; 
+$vph: 850px; 
 
 html {
 	scroll-behavior: smooth;
