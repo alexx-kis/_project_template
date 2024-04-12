@@ -20,7 +20,7 @@ html {
 
 	//% для сайтов без полей по краям 
 	max-width: max(1440px, calc(1440px/$vp*100vw));
-	padding: 0 max(20px, calc(20px/$vp*100vw));
+	padding: 0 max(calc(20px/$vp*100vw), 20px);
 
 
 	margin: 0 auto;
