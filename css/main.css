@@ -133,8 +133,45 @@ html {
 /*^ //^======================== INPUTS ========================^// ^*/
 /*^ //^======================== INPUTS ========================^// ^*/
 /* undefined*/
-/*^ //^======================== ACCORDIONS ========================^// ^*/
-/*^ //^======================== ACCORDIONS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^------------ default select styles ------------^// ^*/
+.select {
+  position: relative;
+}
+.select__pane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.select__content {
+  position: absolute;
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
+.select__label {
+  display: block;
+  cursor: pointer;
+}
+.select input {
+  position: absolute;
+  visibility: hidden;
+}
+
+/*^ //^======================== TAGS ========================^// ^*/
+/*^ //^======================== TAGS ========================^// ^*/
+/*$ //$======================== ACCORDIONS ========================$// $*/
+/*$ //$======================== ACCORDIONS ========================$// $*/
 /* undefined*/
 /*$ //$======================== HEADER ========================$// $*/
 /*$ //$======================== HEADER ========================$// $*/

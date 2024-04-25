@@ -1,0 +1,32 @@
+/*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
+
+/*^ //^------------ default select styles ------------^// ^*/
+
+.select {
+  position: relative;
+
+  &__pane {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 250ms;
+  }
+
+  &__label {
+    display: block;
+    cursor: pointer;
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
