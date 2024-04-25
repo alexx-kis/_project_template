@@ -1,0 +1,10 @@
+/*% //%======================== FUNCTIONS ========================%// %*/
+/*% //%======================== FUNCTIONS ========================%// %*/
+
+@function vm($max, $min, $vp) {
+  @return max(calc(round($max/$vp*100vw*1000)/1000), $min);
+}
+
+@function cvm($const, $vp) {
+  @return max(calc(round($const/$vp*100vw*1000)/1000), $const);
+}
