@@ -1,10 +1,9 @@
-// $======================== select ========================$ //
+// $------------------------ selects ------------------------$ //
 
 const selects = document.querySelectorAll('.select');
 
 selects.forEach(select => {
   const selectPane = select.querySelector('.select__pane');
-  const selectLabels = select.querySelectorAll('.select__label');
   const selectContent = select.querySelector('.select__content');
 
   selectPane.addEventListener('click', (e) => {
@@ -26,18 +25,20 @@ selects.forEach(select => {
     }
   });
 
-  document.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    e.stopPropagation();
     select.classList.remove('_active');
     selectContent.style.maxHeight = null;
   });
 
-  selectLabels.forEach(selectLabel => {
-    selectLabel.addEventListener('click', () => {
+  select.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (e.target.classList.contains('select__label')) {
       const selectPaneText = selectPane.querySelector('.select__pane-text');
-      selectPaneText.textContent = selectLabel.textContent;
+      selectPaneText.textContent = e.target.textContent;
       select.classList.remove('_active');
       selectPane.classList.add('_selected');
       selectContent.style.maxHeight = null;
-    });
+    }
   });
 });
