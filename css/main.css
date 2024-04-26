@@ -132,42 +132,28 @@ html {
 /*undefined*/
 /*^ //^======================== INPUTS ========================^// ^*/
 /*^ //^======================== INPUTS ========================^// ^*/
-/* undefined*/
-/*^ //^======================== SELECTS ========================^// ^*/
-/*^ //^======================== SELECTS ========================^// ^*/
-/*^ //^------------ default select styles ------------^// ^*/
-.select {
-  position: relative;
+/*^ //^------------ checkbox ------------^// ^*/
+.checkbox__icon {
+  display: block;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
-.select__pane {
+.checkbox__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
 }
-.select__content {
-  position: absolute;
-  z-index: 1;
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: all 250ms;
-  transition: all 250ms;
-}
-.select__label {
-  display: block;
-  cursor: pointer;
-}
-.select input {
+.checkbox input {
   position: absolute;
   visibility: hidden;
 }
 
+/*^ //^======================== SELECTS ========================^// ^*/
+/*^ //^======================== SELECTS ========================^// ^*/
 /*^ //^======================== TAGS ========================^// ^*/
 /*^ //^======================== TAGS ========================^// ^*/
 /*$ //$======================== ACCORDIONS ========================$// $*/
@@ -190,7 +176,6 @@ html {
 /*undefined*/
 /*$ //$======================== MODALS ========================$// $*/
 /*$ //$======================== MODALS ========================$// $*/
-/* undefined*/
 /*$ //$======================== LISTS ========================$// $*/
 /*$ //$======================== LISTS ========================$// $*/
 /* undefined*/

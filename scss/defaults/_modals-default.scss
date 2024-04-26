@@ -1,0 +1,25 @@
+/*& //&======================== MODALS DEFAULT ========================&// &*/
+/*& //&======================== MODALS DEFAULT ========================&// &*/
+.modal {
+  position: fixed;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  z-index: calc(infinity);
+  display: block;
+  max-width: calc(100% - 6px - 20px);
+  max-height: calc(100% - 6px - 20px);
+  margin: auto;
+
+  visibility: hidden;
+  opacity: 0;
+
+  overflow: auto;
+  box-shadow: 0 0 0 100vmax #00000038;
+  transition: all 250ms;
+  user-select: text;
+
+  &[open] {
+    visibility: visible;
+    opacity: 1;
+  }
+}
