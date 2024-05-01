@@ -1,32 +1,52 @@
 // $======================== accordion ========================$ //
 
-const tabs = document.querySelectorAll(".accordion__tab");
+const initAccordion = (accordion) => {
+  /// functions to open and close tabs
+  const openTab = (tab) => {
+    const body = tab.querySelector('.accordion__body');
+    tab.classList.add("active");
+    body.classList.add("active");
+    body.style.maxHeight = body.scrollHeight + "px";
+  };
+  
+  const closeTab = (tab) => {
+    const body = tab.querySelector('.accordion__body');
+    tab.classList.remove("active");
+    body.classList.remove("active");
+    body.style.maxHeight = null;
+  };
 
-const defaultOpenContent = document.querySelector('.accordion__content.open');
-if (defaultOpenContent) {
-  defaultOpenContent.style.maxHeight = defaultOpenContent.scrollHeight + 'px';
+  /// open default active tab
+  const defaultActiveTab = accordion.querySelector('.accordion__tab.active');
+  if (defaultActiveTab) {
+    openTab(defaultActiveTab);
+  }
+  
+  /// main accordion function
+  const tabs = accordion.querySelectorAll(".accordion__tab");
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const body = tab.querySelector('.accordion__body');
+      const openedTab = accordion.querySelector(".accordion__tab.active");
+  
+      if (body.classList.contains("active") && body.style.maxHeight != null) {
+        closeTab(tab);
+      } else {
+        openTab(tab);
+  
+        if (openedTab) {
+          closeTab(openedTab);
+        }
+      }
+    });
+  });
 }
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const content = tab.querySelector('.accordion__content');
-    const openContent = document.querySelector(".accordion__content.open");
-    const openTab = document.querySelector(".accordion__tab.open");
-
-    if (content.classList.contains("open") && content.style.maxHeight != null) {
-      tab.classList.remove("open");
-      content.classList.remove("open");
-      content.style.maxHeight = null;
-    } else {
-      tab.classList.add("open");
-      content.classList.add("open");
-      content.style.maxHeight = content.scrollHeight + "px";
-
-      if (openContent) {
-        openTab.classList.remove("open");
-        openContent.classList.remove("open");
-        openContent.style.maxHeight = null;
-      }
-    }
+/// initialize all accordions on page
+const accordions = document.querySelectorAll('.accordion');
+if (accordions.length !== 0) {
+  accordions.forEach(accordion => {
+    initAccordion(accordion);
   });
-});
+}
+

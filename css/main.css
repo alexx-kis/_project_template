@@ -158,7 +158,23 @@ html {
 /*^ //^======================== TAGS ========================^// ^*/
 /*$ //$======================== ACCORDIONS ========================$// $*/
 /*$ //$======================== ACCORDIONS ========================$// $*/
-/* undefined*/
+/*& //&======================== ACCORDIONS DEFAULT ========================&// &*/
+/*& //&======================== ACCORDIONS DEFAULT ========================&// &*/
+.accordion__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
 /*$ //$======================== HEADER ========================$// $*/
 /*$ //$======================== HEADER ========================$// $*/
 /*undefined*/
