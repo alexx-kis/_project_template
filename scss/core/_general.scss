@@ -1,9 +1,6 @@
 /*@ //@======================== GENERAL ========================@// @*/
 /*@ //@======================== GENERAL ========================@// @*/
 
-$vp: 1440px; 
-$vph: 850px; 
-
 html {
 	scroll-behavior: smooth;
 }
@@ -19,11 +16,10 @@ html {
 	// padding: 0 15px;
 
 	//% для сайтов без полей по краям 
-	max-width: max(1440px, calc(1440px/$vp*100vw));
-	padding: 0 max(calc(20px/$vp*100vw), 20px);
+	max-width: cvm($vp, $vp);
+	padding-inline: $containerPadding;
 
 
-	margin: 0 auto;
+	margin-inline: auto;
 	height: 100%;
-
 }

@@ -1,13 +1,6 @@
-/*& //&======================== ACCORDIONS DEFAULT ========================&// &*/
-/*& //&======================== ACCORDIONS DEFAULT ========================&// &*/
+//&======================== ACCORDIONS DEFAULT ========================&//
+//&======================== ACCORDIONS DEFAULT ========================&//
 .accordion {
-
-  &__tab {
-
-    .active {
-
-    }
-  }
 
   &__header {
     display: flex;
@@ -15,18 +8,9 @@
     cursor: pointer;
   }
 
-  &__header-text {
-  }
-
-  &__header-button {
-  }
-
   &__body {
     max-height: 0;
     overflow: hidden;
     transition: all 250ms;
-  }
-
-  &__content {
   }
 }

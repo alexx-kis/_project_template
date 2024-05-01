@@ -1,0 +1,29 @@
+//&======================== CUSTOM CHECKBOX DEFAULT ========================&//
+//&======================== CUSTOM CHECKBOX DEFAULT ========================&//
+
+.checkbox {
+
+  &__icon {
+    display: block;
+    transition: all 250ms;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__text {}
+
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &:has(input:checked) {
+    .checkbox__icon {
+
+    }
+  }
+}
