@@ -17,7 +17,7 @@ const initAccordion = (accordion) => {
   };
 
   /// open default active tab
-  const defaultActiveTab = accordion.querySelector('.accordion__tab.active');
+  const defaultActiveTab = accordion.querySelector('.accordion__tab._active');
   if (defaultActiveTab) {
     openTab(defaultActiveTab);
   }
@@ -27,7 +27,7 @@ const initAccordion = (accordion) => {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const body = tab.querySelector('.accordion__body');
-      const openedTab = accordion.querySelector(".accordion__tab.active");
+      const openedTab = accordion.querySelector(".accordion__tab._active");
   
       if (body.classList.contains("active") && body.style.maxHeight != null) {
         closeTab(tab);
