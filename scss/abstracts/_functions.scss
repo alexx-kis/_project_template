@@ -8,3 +8,13 @@
 @function cvm($const, $vp) {
   @return max(calc(round($const/$vp*100vw*1000)/1000), $const);
 }
+
+@function desk($max, $min) {
+  @return max(calc(round($max/$vp*100vw*1000)/1000), $min);
+}
+@function tab($max, $min) {
+  @return max(calc(round($max/$vpt*100vw*1000)/1000), $min);
+}
+@function mob($max, $min) {
+  @return max(calc(round($max/$vpm*100vw*1000)/1000), $min);
+}
