@@ -1,6 +1,12 @@
 //%======================== MIXINS ========================%//
 //%======================== MIXINS ========================%//
 
+//%------------ square ------------%//
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
 //%------------ circle ------------%//
 @mixin circle($size) {
   width: $size;
@@ -19,8 +25,7 @@
 @mixin adapt($property, $desk, $tab, $mob) {
   #{$property}: desk($desk, $tab);
 
-  //4-------- tablet -------4//
-  @media (width <=$vpt) {
+  @media (width <=$TABLET) {
     #{$property}: tab($tab, $mob);
   }
 }
@@ -36,7 +41,7 @@
 }
 
 //%------------ normalize font ------------%//
-//5 if it is bolder than needed
+// if it is bolder than needed
 @mixin normalize-font {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
