@@ -1,30 +1,62 @@
 //%======================== FUNCTIONS ========================%//
 //%======================== FUNCTIONS ========================%//
+@use 'sass:math';
 
+//%------------ to Fixed decimals ------------%//
+@function toFixed($value, $decimals) {
+  @return calc(round($value * math.pow(10, $decimals)) / math.pow(10, $decimals));
+}
+
+//%======================== CONVERT PX TO VW ========================%//
+//% converts px to vw according to custom viewport width
+@function toVW($value, $vp) {
+  @return toFixed($value/$vp*100vw, 3);
+}
+
+//% converts px to vw according to DESKTOP viewport width
+@function vwDesk($value) {
+  @return toVW($value, $DESKTOP);
+}
+
+//% converts px to vw according to TABLET viewport width
+@function vwTab($value) {
+  @return toVW($value, $TABLET);
+}
+
+//% converts px to vw according to MOBILE viewport width
+@function vwMob($value) {
+  @return toVW($value, $MOBILE);
+}
+
+
+//%------------ adapt to custom vp ------------%//
 @function vm($max, $min, $vp) {
-  @return max(calc(round($max/$vp*100vw*1000)/1000), $min);
+  @return max(toVW($max, $vp), $min);
 }
 
-@function cvm($const, $vp) {
-  @return max(calc(round($const/$vp*100vw*1000)/1000), $const);
-}
-
-//%------------ value increases relatively to viewport ------------%//
+//% adapt to desktop vp (CONST)
 @function const($const) {
-  @return max(calc(round($const/$DESKTOP*100vw*1000)/1000), $const);
+  @return vm($const, $const, $DESKTOP);
 }
 
-//5------------ and not decreases to tablet vp ------------5//
+//% adapt to desktop vp
 @function desk($max, $min) {
-  @return max(calc(round($max/$DESKTOP*100vw*1000)/1000), $min);
+  @return vm($max, $min, $DESKTOP);
 }
 
-//%------------ value decreases to tablet vp ------------%//
+//% adapt to tablet vp
 @function tab($max, $min) {
-  @return max(calc(round($max/$TABLET*100vw*1000)/1000), $min);
+  @return vm($max, $min, $TABLET);
 }
 
-//%------------ value decreases to mobile vp ------------%//
+//% adapt to mobile vp
 @function mob($max, $min) {
-  @return max(calc(round($max/$MOBILE*100vw*1000)/1000), $min);
+  @return vm($max, $min, $MOBILE);
+}
+
+
+//%======================== CONVERT PX TO VH ========================%//
+//% converts px to vw according to custom viewport width
+@function toVH($value, $vph) {
+  @return toFixed($value/$vph*100dvh, 3);
 }

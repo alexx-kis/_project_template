@@ -16,10 +16,26 @@ html {
 	// padding: 0 15px;
 
 	//% для сайтов без полей по краям 
-	max-width: cvm($vp, $vp);
-	padding-inline: $containerPadding;
+	max-width: max(vwd(1440px), 1440px);
+	padding-inline: max(vwd(40px), 20px);
 
 
 	margin-inline: auto;
 	height: 100%;
+}
+
+.block {
+	background-color: #000;
+	aspect-ratio: 1;
+	width: desk(100px, 50px);
+
+	@media (max-width: 600px) {
+		$vp: 600px;
+		width: vp(50px, 40px, $vp);
+	}
+
+	// @media (max-width: $TABLET) {
+	// 	width: max(vwTab(50px), 20px);
+	// }
+
 }
