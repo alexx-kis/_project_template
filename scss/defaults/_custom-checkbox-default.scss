@@ -4,6 +4,7 @@
 .checkbox {
 
   &__icon {
+    flex-shrink: 0;
     display: block;
     transition: all 250ms;
   }
