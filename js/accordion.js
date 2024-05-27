@@ -4,15 +4,15 @@ const initAccordion = (accordion) => {
   /// functions to open and close tabs
   const openTab = (tab) => {
     const body = tab.querySelector('.accordion__body');
-    tab.classList.add("active");
-    body.classList.add("active");
+    tab.classList.add("_active");
+    body.classList.add("_active");
     body.style.maxHeight = body.scrollHeight + "px";
   };
   
   const closeTab = (tab) => {
     const body = tab.querySelector('.accordion__body');
-    tab.classList.remove("active");
-    body.classList.remove("active");
+    tab.classList.remove("_active");
+    body.classList.remove("_active");
     body.style.maxHeight = null;
   };
 
@@ -29,7 +29,7 @@ const initAccordion = (accordion) => {
       const body = tab.querySelector('.accordion__body');
       const openedTab = accordion.querySelector(".accordion__tab._active");
   
-      if (body.classList.contains("active") && body.style.maxHeight != null) {
+      if (body.classList.contains("_active") && body.style.maxHeight != null) {
         closeTab(tab);
       } else {
         openTab(tab);
