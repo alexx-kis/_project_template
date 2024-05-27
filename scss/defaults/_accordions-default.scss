@@ -9,6 +9,10 @@
     cursor: pointer;
   }
 
+  &__header-button {
+    flex-shrink: 0;
+  }
+
   &__body {
     max-height: 0;
     overflow: hidden;
