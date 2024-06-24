@@ -1,7 +1,7 @@
-//$======================== MODALS ========================$//
-//$======================== MODALS ========================$//
+// $======================== MODALS ========================$ //
+
 const MODAL_CLASS = '.modal';
-const CLOSE_MODAL_BUTTON_CLASS = '.close-modal'
+const CLOSE_MODAL_BUTTON_CLASS = '.close-modal';
 // $------------ general ------------$ //
 const openModal = (modal) => {
 	modal.showModal();
@@ -13,8 +13,7 @@ const closeModal = (modal) => {
 	document.body.style.overflow = 'visible';
 };
 
-const modals = document.querySelectorAll(MODAL_CLASS);
-modals.forEach(modal => {
+const adjustModal = (modal) => {
 	if (modal) {
 		const closeModalButton = modal.querySelector(CLOSE_MODAL_BUTTON_CLASS);
 		modal.addEventListener('click', (e) => {
@@ -33,8 +32,9 @@ modals.forEach(modal => {
 			}
 		});
 	}
+};
+
+const modals = document.querySelectorAll(MODAL_CLASS);
+modals.forEach(modal => {
+	adjustModal(modal);
 });
-
-
-/*&// &======================== EXPORT ========================& //&*/
-export { openModal }

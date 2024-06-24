@@ -1,27 +1,27 @@
-//&======================== SELECTS DEFAULT  ========================&//
-//&======================== SELECTS DEFAULT  ========================&//
+//&======================== SELECTS DEFAULT ========================&//
+//&======================== SELECTS DEFAULT ========================&//
 
 .select {
   position: relative;
 
   &._active {
-    .select__pane-icon {
+    .select__header-icon {
       transform: rotateX(180deg);
     }
   }
 
-  &__pane {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
   }
 
-  &__pane-icon {
+  &__header-icon {
     transition: all 250ms;
   }
 
-  &__content {
+  &__body {
     position: absolute;
     z-index: 1;
     max-height: 0;

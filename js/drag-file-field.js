@@ -1,3 +1,5 @@
+// $======================== DRAG FILE FIELD ========================$ //
+
 const initDragFileField = (field) => {
   const input = field.querySelector('.drag-file-field__input');
   const icon = field.querySelector('.drag-file-field__icon');

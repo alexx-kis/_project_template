@@ -16,8 +16,8 @@ html {
 	// padding: 0 15px;
 
 	//% для сайтов без полей по краям 
-	max-width: max(vwd(1440px), 1440px);
-	padding-inline: max(vwd(40px), 20px);
+	max-width: max(vwDesk(1440px), 1440px);
+	padding-inline: max(vwDesk(40px), 20px);
 
 
 	margin-inline: auto;
