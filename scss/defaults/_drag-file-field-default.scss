@@ -1,0 +1,26 @@
+/*& //&======================== DRAG FILE FIELD DEFAULT ========================&// &*/
+/*& //&======================== DRAG FILE FIELD DEFAULT ========================&// &*/
+.drag-file-field {
+
+  &__label {
+    position: relative;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__icon {}
+
+  &__text {}
+
+  &__thumbnail {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
