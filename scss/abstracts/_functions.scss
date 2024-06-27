@@ -10,7 +10,7 @@
 //%======================== CONVERT PX TO VW ========================%//
 //% converts px to vw according to custom viewport width
 @function toVW($value, $vp) {
-  @return toFixed($value/$vp*100vw, 3);
+  @return toFixed(calc($value/$vp*100vw), 3);
 }
 
 //% converts px to vw according to DESKTOP viewport width
@@ -58,5 +58,5 @@
 //%======================== CONVERT PX TO VH ========================%//
 //% converts px to vw according to custom viewport width
 @function toVH($value, $vph) {
-  @return toFixed($value/$vph*100dvh, 3);
+  @return toFixed(calc($value/$vph*100dvh), 3);
 }
