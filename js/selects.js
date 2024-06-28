@@ -48,7 +48,9 @@ const initSelect = (select) => {
 };
 
 /// initialize all selects on page
-const selects = document.querySelectorAll(SELECT_CLASS);
-selects.forEach(select => {
-  initSelect(select);
-});
+const selects = document.querySelectorAll(`.${SELECT_CLASS}`);
+if (selects.length > 0) {
+  selects.forEach(select => {
+    initSelect(select);
+  });
+}
