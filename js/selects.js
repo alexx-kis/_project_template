@@ -1,9 +1,9 @@
 // $======================== SELECTS ========================$ //
-const SELECT_CLASS = '.select';
-const SELECT_HEADER_CLASS = '.select__header';
-const SELECT_BODY_CLASS = '.select__body';
+const SELECT_CLASS = 'select';
+const SELECT_HEADER_CLASS = 'select__header';
+const SELECT_BODY_CLASS = 'select__body';
 const ACTIVE_CLASS = '_active';
-const SELECT_HEADER_TEXT_CLASS = '.select__header-text';
+const SELECT_HEADER_TEXT_CLASS = 'select__header-text';
 const SELECTED_CLASS = '_selected';
 
 const initSelect = (select) => {
