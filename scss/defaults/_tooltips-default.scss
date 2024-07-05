@@ -1,0 +1,55 @@
+//&======================== TOOLTIPS  DEFAULT ========================&//
+//&======================== TOOLTIPS  DEFAULT ========================&//
+.tooltip {
+  position: relative;
+
+  &._left {
+    .tooltip__body {
+      left: auto;
+      right: calc(100% + const(2px));
+    }
+
+  }
+
+  &._right {
+    .tooltip__body {
+      left: calc(100% + const(2px));
+      right: auto;
+    }
+
+  }
+
+  &._bottom {
+    .tooltip__body {
+      top: calc(100% + const(2px));
+      bottom: auto;
+    }
+
+  }
+
+  &._top {
+    .tooltip__body {
+      top: auto;
+      bottom: calc(100% + const(2px));
+    }
+
+  }
+
+  &:hover {
+    .tooltip__body {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__button {}
+
+  &__body {
+    position: absolute;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #fff;
+    transition: all 250ms;
+  }
+}
