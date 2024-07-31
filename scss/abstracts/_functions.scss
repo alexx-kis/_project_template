@@ -45,6 +45,11 @@
 }
 
 //% adapt to tablet vp
+@function lap($max, $min) {
+  @return vm($max, $min, $LAPTOP);
+}
+
+//% adapt to tablet vp
 @function tab($max, $min) {
   @return vm($max, $min, $TABLET);
 }
