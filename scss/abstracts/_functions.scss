@@ -65,3 +65,13 @@
 @function toVH($value, $vph) {
   @return toFixed(calc($value/$vph*100dvh), 3);
 }
+
+/*% //%------------ adapt to custom vp height ------------%// %*/
+@function vhm($max, $min, $vph) {
+  @return max(toVH($max, $vph), $min);
+}
+
+/*% //%------------ convert to vw and vh ------------%// %*/
+@function vwh($maxWidth, $minWidth, $maxHeight, $minHeight, $viewportWidth, $viewportHeight) {
+  @return min(vm($maxWidth, $minWidth, $viewportWidth), vhm($maxHeight, $minHeight, $viewportHeight));
+}
