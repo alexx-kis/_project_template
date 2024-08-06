@@ -1,4 +1,5 @@
 // $======================== TOOLTIPS ========================$ //
+
 const adjustHorizontalPosition = (tooltip) => {
   const body = tooltip.querySelector('.tooltip__body');
   const margin = 10;

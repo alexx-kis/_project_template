@@ -6,15 +6,15 @@ html {
 }
 
 .wrapper {
-	min-height: 100%;
 	width: 100%;
+	min-height: 100%;
 	overflow: clip;
 }
 
 .container {
 	max-width: const(1440px);
-	padding-inline: desk(40px, 20px);
+	height: 100%;
 
 	margin-inline: auto;
-	height: 100%;
+	padding-inline: desk(40px, 20px);
 }

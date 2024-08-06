@@ -2,6 +2,7 @@
 
 const MODAL_CLASS = '.modal';
 const CLOSE_MODAL_BUTTON_CLASS = '.close-modal';
+
 // $------------ general ------------$ //
 const openModal = (modal) => {
 	modal.showModal();

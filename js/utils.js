@@ -1,3 +1,5 @@
+// $======================== UTILS ========================$ //
+
 //$ function returns true, if Escape-key was pressed
 const isEscapeKey = (event) => event.key === 'Escape'
 

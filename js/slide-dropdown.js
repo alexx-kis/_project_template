@@ -1,4 +1,5 @@
 // $======================== SLIDE-DROPDOWN ========================$ //
+
 const updateParentHeight = (element) => {
   const parentDropdownBody = element.closest('.slide-dropdown__body');
   if (parentDropdownBody) {

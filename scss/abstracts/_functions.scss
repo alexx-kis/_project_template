@@ -2,76 +2,74 @@
 //%======================== FUNCTIONS ========================%//
 @use 'sass:math';
 
-//%------------ to Fixed decimals ------------%//
+//%------------ converts a number to fixed decimals ------------%//
 @function toFixed($value, $decimals) {
-  @return calc(round($value * math.pow(10, $decimals)) / math.pow(10, $decimals));
+  $nthPowerOfTen: math.pow(10, $decimals);
+  @return calc(round($value * $nthPowerOfTen) / $nthPowerOfTen);
 }
 
 //%======================== CONVERT PX TO VW ========================%//
 //% converts px to vw according to custom viewport width
 @function toVW($value, $vp) {
-  @return toFixed(calc($value/$vp*100vw), 3);
+  $convertedValue: calc($value/$vp*100vw);
+  @return toFixed($convertedValue, 3);
 }
 
-//% converts px to vw according to DESKTOP viewport width
-@function vwDesk($value) {
-  @return toVW($value, $DESKTOP);
-}
-
-//% converts px to vw according to TABLET viewport width
-@function vwTab($value) {
-  @return toVW($value, $TABLET);
-}
-
-//% converts px to vw according to MOBILE viewport width
-@function vwMob($value) {
-  @return toVW($value, $MOBILE);
-}
-
-
-//%------------ adapt to custom vp ------------%//
-@function vm($max, $min, $vp) {
+//%------------ adapt to custom viewport width ------------%//
+//% (viewport width max)
+@function vwm($max, $min, $vp) {
   @return max(toVW($max, $vp), $min);
 }
 
-//% adapt to desktop vp (CONST)
-@function const($const) {
-  @return vm($const, $const, $DESKTOP);
-}
-
-//% adapt to desktop vp
+//% adapt to full HD viewport width (1920px)
 @function desk($max, $min) {
-  @return vm($max, $min, $DESKTOP);
+  @return vwm($max, $min, $FULLHD);
 }
 
-//% adapt to tablet vp
+//% adapt to desktop viewport width (CONST) (1440px)
+@function const($const) {
+  @return vwm($const, $const, $DESKTOP);
+}
+
+//% adapt to desktop viewport width (1440px)
+@function desk($max, $min) {
+  @return vwm($max, $min, $DESKTOP);
+}
+
+//% adapt to laptop viewport width (1024px)
 @function lap($max, $min) {
-  @return vm($max, $min, $LAPTOP);
+  @return vwm($max, $min, $LAPTOP);
 }
 
-//% adapt to tablet vp
+//% adapt to tablet viewport width (834px or another)
 @function tab($max, $min) {
-  @return vm($max, $min, $TABLET);
+  @return vwm($max, $min, $TABLET);
 }
 
-//% adapt to mobile vp
+//% adapt to mobile viewport width (600px or another)
 @function mob($max, $min) {
-  @return vm($max, $min, $MOBILE);
+  @return vwm($max, $min, $MOBILE);
 }
 
 
 //%======================== CONVERT PX TO VH ========================%//
 //% converts px to vw according to custom viewport width
-@function toVH($value, $vph) {
-  @return toFixed(calc($value/$vph*100dvh), 3);
+@function toVH($value, $vp) {
+  $convertedValue: calc($value/$vp*100dvh);
+  @return toFixed($convertedValue, 3);
 }
 
-/*% //%------------ adapt to custom vp height ------------%// %*/
+//%------------ adapt to custom viewport height ------------%//
+//% (viewport height max)
 @function vhm($max, $min, $vph) {
   @return max(toVH($max, $vph), $min);
 }
 
-/*% //%------------ convert to vw and vh ------------%// %*/
-@function vwh($maxWidth, $minWidth, $maxHeight, $minHeight, $viewportWidth, $viewportHeight) {
-  @return min(vm($maxWidth, $minWidth, $viewportWidth), vhm($maxHeight, $minHeight, $viewportHeight));
+//%------------ adapt to custom vw and vh ------------%//
+@function vwhm($initialValue, $minWidth, $minHeight, $viewportWidth, $viewportHeight) {
+
+  $adaptedToCustomViewportWidth: vwm($initialValue, $minWidth, $viewportWidth);
+  $adaptedToCustomViewportHeight: vhm($initialValue, $minHeight, $viewportHeight);
+
+  @return min($adaptedToCustomViewportWidth, $adaptedToCustomViewportHeight);
 }
