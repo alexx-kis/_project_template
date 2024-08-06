@@ -8,17 +8,12 @@ html {
 .wrapper {
 	min-height: 100%;
 	width: 100%;
-	overflow: hidden;
+	overflow: clip;
 }
 
 .container {
-	// max-width: ; 
-	// padding: 0 15px;
-
-	//% для сайтов без полей по краям 
-	max-width: max(vwDesk(1440px), 1440px);
-	padding-inline: max(vwDesk(40px), 20px);
-
+	max-width: const(1440px);
+	padding-inline: desk(40px, 20px);
 
 	margin-inline: auto;
 	height: 100%;
