@@ -3,7 +3,12 @@
 - установить плагин ESLint (если его нет) в VSCode
 
 - установить eslint через терминал:
-  npm install eslint --save-dev --save-exact
+
+        npm install eslint --save-dev --save-exact
+
+или
+
+        npm install --save-dev eslint @eslint/js
 
 - появится директория с пакетами node_modules, её нужно записать в .gitignore
 
@@ -13,7 +18,7 @@
 
 - инициализировать eslint:
 
-        npm init @eslint/config
+        npm init @eslint/config@latest
 
 - ответить на вопросы в терминале
 
@@ -22,8 +27,8 @@
 - в файл package.json после devDependencies через запятую добавить блок скриптов:
 
         "scripts": {
-            "lint": "eslint js/"
-          }
+                "lint": "eslint js/"
+        }
 
 - теперь в терминале можно запускать команду npm run lint которая будет проверять код на ошибки и писать отчёт в терминале || можно использовать вкладку PROBLEMS где плагин будет информировать об ошибках
 
@@ -36,4 +41,29 @@
 
 - создать файл .eslintignore в написать туда названия папок/файлов, которые не нужно проверять, например, vendor
 
-- если не работает, переделать файл .eslintrc в формат json
+## Настройка
+
+- в файле eslint.config.mjs:
+
+        import globals from "globals";
+        import pluginJs from "@eslint/js";
+
+
+        export default [
+          {
+            languageOptions:
+            {
+              globals:    // здесь можно указывать глобальные переменные из библиотек
+              {
+                ...globals.browser,
+                "Splide": "readonly",
+              }
+            },
+            "rules": {    // здесь можно указывать правила
+              "no-console": "warn",
+              "no-unused-vars": "warn",
+              "prefer-arrow-callback": "warn"
+            }
+          },
+          pluginJs.configs.recommended,
+        ];
