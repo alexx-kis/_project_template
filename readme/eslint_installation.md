@@ -6,7 +6,7 @@
 
         npm install eslint --save-dev --save-exact
 
-или
+или (лучше)
 
         npm install --save-dev eslint @eslint/js
 
@@ -57,6 +57,10 @@
               {
                 ...globals.browser,
                 "Splide": "readonly",
+                "mixitup": "readonly",
+                "gsap": "readonly",
+                "ScrollTrigger": "readonly",
+                "$": "readonly",
               }
             },
             "rules": {    // здесь можно указывать правила
