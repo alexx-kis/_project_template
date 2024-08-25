@@ -1,20 +1,19 @@
-//%======================== MIXINS ========================%//
-//%======================== MIXINS ========================%//
+// %======================== MIXINS ========================% //
 
-//%------------ square ------------%//
+// %------------ square ------------% //
 @mixin square($size) {
   width: $size;
   height: $size;
 }
 
-//%------------ circle ------------%//
+// %------------ circle ------------% //
 @mixin circle($size) {
   width: $size;
   height: $size;
   border-radius: 50%;
 }
 
-//%------------ adapt property ------------%//
+// %------------ adapt property ------------% //
 @mixin adapt($property, $desk, $tab, $mob) {
   #{$property}: desk($desk, $tab);
 
@@ -23,7 +22,7 @@
   }
 }
 
-//%------------ hide scrollbar ------------%//
+// %------------ hide scrollbar ------------% //
 @mixin hide-scrollbar {
   &::-webkit-scrollbar {
     display: none; // Chrome, Safari, Opera
@@ -33,7 +32,7 @@
   scrollbar-width: none; // Firefox
 }
 
-//%------------ normalize font ------------%//
+// %------------ normalize font ------------% //
 // if it is bolder than needed
 @mixin normalize-font {
   -webkit-font-smoothing: antialiased;
@@ -41,7 +40,7 @@
   font-smooth: never;
 }
 
-//%------------ line clamp ------------%//
+// %------------ line clamp ------------% //
 @mixin line-clamp($lines) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;

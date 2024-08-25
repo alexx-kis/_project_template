@@ -1,5 +1,5 @@
-//&======================== CUSTOM CHECKBOX DEFAULT ========================&//
-//&======================== CUSTOM CHECKBOX DEFAULT ========================&//
+// &======================== CUSTOM CHECKBOX DEFAULT ========================& //
+// &======================== CUSTOM CHECKBOX DEFAULT ========================& //
 
 .checkbox {
 
@@ -23,8 +23,6 @@
   }
 
   &:has(input:checked) {
-    .checkbox__icon {
-
-    }
+    .checkbox__icon {}
   }
 }
