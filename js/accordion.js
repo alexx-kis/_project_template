@@ -14,7 +14,7 @@ const initAccordion = (accordion) => {
   };
 
   const closeTab = (tab) => {
-    const body = tab.querySelector(`${ACCORDION_BODY_CLASS}`);
+    const body = tab.querySelector(`.${ACCORDION_BODY_CLASS}`);
     tab.classList.remove(ACTIVE_CLASS);
     body.classList.remove(ACTIVE_CLASS);
     body.style.maxHeight = null;
