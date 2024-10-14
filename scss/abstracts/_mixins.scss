@@ -47,3 +47,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+// %------------ autoAlpha ------------% // 
+@mixin autoAlpha0 {
+  visibility: hidden;
+  opacity: 0;
+}
